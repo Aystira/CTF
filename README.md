@@ -1,4 +1,4 @@
-# Correlation One DoD May 2024 CTF
+# DoD Cyber Sentinel Skills May 2024 CTF
 By Aystira\
 5/24/2024
 
