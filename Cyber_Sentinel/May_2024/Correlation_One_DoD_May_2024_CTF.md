@@ -1,6 +1,7 @@
 # Correlation One DoD May 2024 CTF
-by Aystira
+By Aystira\
 5/24/2024
+
 
 On May 18, 2024 Cyber Sentinel in collaboration with the DoD hosted a Capture the Flag (CTF) Competition for aspiring and veteran cybersecurity professionals.
 This was my first ever official CTF and I had a great experience overall.  I was only able to answer 4 out of the 21 questions but was overall happy with how I did based on the difficulty.  While the challenge said it was for beginners, I believe that the challenges were definitely not at the beginner level.  This document is my writeup of how I did in the CTF and the documenetation of the steps I took to obtain the flags in the questions that I answered.
@@ -19,3 +20,25 @@ FLAG: C1{1275}
 I struggled a lot with the original flag due to not knowing how to obtain the MAC Address for a device I did not have access to.  I spent a lot of time using nmap to attempt to ping the website and try to obtain a MAC address but was unsuccessful.  I did learn later that a site called https://wigle.net is available as an open source intelligence tool for identifying wifi networks.  Playing around with it on another day, I was able to obtain the MAC Address for 'PAUL - French Bakery & Cafe'.
 
 FLAG: C1{6C:CD:D6}
+
+## Exfil - Medium (200p)
+This question was an interesting question about analyzing a pcap file.  
+
+### Solution
+Seeing that the file provided was a pcap, I opened the file in wireshark.  When I opened the pcap, I immediately went to see what type of packets were in the pcap.  This revealed that all packets in the pcap file were dns packets.  I then looked at the packets and noticed dns queries to the subdomain data.exfiltrated.com. The string before the subdomain also was suspicious as it looked to be encoded text. I filtered the information in the pcap to have only the outgoing query packets and saved the results as a csv.  I then modified the csv in terminal to remove all unnecessary data leaving only the encoded text.  I then copied the encoded text into [CyberChef](https://gchq.github.io/CyberChef/).  I used CyberChef to remove the carriage returns and decode the message revealing a picture with the flag.
+
+FLAG: C1{dns_3xfil7r4t3d!}
+
+### Takeaway
+Analyzing the pcap file in this challenge was a good refresher on Wireshark and seeing the DNS exfiltration method was fascinating.  I learned how to modify csv files in the terminal to remove columns, making it much easier to collect only the data I needed from the pcap before putting it into CyberChef.  There were definitely better methods to solve this challenge that I will have to look into.  tshark seems to have been the best option to quickly extract the necessary data. Overall a fun challenge.
+
+## Ephemeral - Easy (150p)
+This challenge was completely online with the flag located on a webpage hosted on a specific IP provided.  The challenge specified that the information was not on a regularly used port.
+
+### Solution
+Once the organizers specified that this was not on a regular port, this clearly meant that we had to do a full port scan on the IP provided. Nmap was an easy choice, but I did run into a minor pitfall where an nmap scan showed the IP being unavailable but was easily able to get around that.  I modified my command to assume that the IP was available and it revealed that TCP port 51147 was open.  I then went to the site by putting in the IP:51147 which contained the flag.
+
+FLAG: C1{ch3ck_4ll_p0rts!}
+
+### Takeaway
+Very simple challenge, and good nmap practice.
