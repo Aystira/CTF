@@ -11,7 +11,11 @@ This first question was an easy question to test your OSINT skills.  The flag or
 <img src="https://github.com/Aystira/CTF/assets/67524880/cec5a0f2-d70b-4cdd-8cfc-a7be879f3552"/>
 
 ### Solution
-In the picture two things stood out immediately to me.  First was the cup with the name PAUL on it.  A quick google search revealed the cup with PAUL to be a logo for the 'PAUL - French Bakery & Cafe'. Second, a street sign could be seen in the background, and while not the clearest, when zoomed in, I could just make out 13, and knowing that the location was in DC, I could reasonably assume that this bakery was located on or near 13th St.  Back to my google search I found the website for 'PAUL - French Bakery & Cafe' (www.pauldmv.com), and went to the locations tab where I found 2 locations in DC, one on 2000 Pennsylvania Ave NW and the other on 1275 K St NW.  Checking google maps and verifying the location of both addresses vs 13th St, I was able to confirm the location where the picture was taken was from the bakery on 1275 K St NW.
+In the picture two things stood out immediately to me.  
+1. The cup with the name PAUL on it.
+2. A street sign could be seen in the background, and while not the clearest, when zoomed in, I could just make out 13
+   
+A quick google search revealed the cup with PAUL to be a logo for the 'PAUL - French Bakery & Cafe' and knowing that the location was in DC, I could reasonably assume that this bakery was located on or near 13th St.  Back to my google search I found the website for 'PAUL - French Bakery & Cafe' (www.pauldmv.com), and went to the locations tab where I found 2 locations in DC, one on 2000 Pennsylvania Ave NW and the other on 1275 K St NW.  Checking google maps and verifying the location of both addresses vs 13th St, I was able to confirm the location where the picture was taken was from the bakery on 1275 K St NW.
 
 FLAG: C1{1275}
 
