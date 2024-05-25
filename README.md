@@ -43,7 +43,18 @@ FLAG: C1{ch3ck_4ll_p0rts!}
 Very simple challenge, and good nmap practice.
 
 ## Important Document - Medium (200p)
-To be honest I don't really remember this one.
+This challenge contained an html document that was attempting to phish for credentials by masquerading as an excel sheet that required logging in to view.  To me, this challenge was a lot simpler than it seemed. (I actually forgot about this challenge completely.)
+
+### Solution
+I first opened the html to see what I was dealing with, not the smartest idea but it was in Kali so I wasn't too worried.  Seeing nothing of relevance, I then opened the file in zsh to see the html code by using the cat command on the file.  The command spit out a long wall of text that included some obfuscated code.  I first looked at the base64 encoded lines and put them into cyberchef.  Unencoding the lines revealed them to be the images for the excel login form.  I then looked at the binary code that had also appeared when I used the cat command. 
+
+![image](https://github.com/Aystira/DoD-Cyber-Sentinels-Skills-Challenge-May-2024-CTF/assets/67524880/84f05581-4f23-4c2e-998a-a105e22a81b0)
+
+I manually added the From Binary operation which revealed a function along with a bunch of other code.  Inside of this code included the url hxxps[://]badguys[.]c1[/]lol (haha) and after it was a small encoded string. I copied the string and put it into Cyberchef, which I then decoded from base64.  Cyberchef then recommended decode from Hex which revealed the flag.
+
+![image](https://github.com/Aystira/DoD-Cyber-Sentinels-Skills-Challenge-May-2024-CTF/assets/67524880/f67133f8-09c5-41cc-881a-aa50dea19eb2)
+
+FLAG: C1{h0p3_y0u_d1dnt_us3_4_r431_p4ssw0rd}
 
 ### Takeaway
 Document while doing the challenge rather than after.
