@@ -42,5 +42,11 @@ FLAG: C1{ch3ck_4ll_p0rts!}
 ### Takeaway
 Very simple challenge, and good nmap practice.
 
+## Important Document - Medium (200p)
+To be honest I don't really remember this one.
+
+### Takeaway
+Document while doing the challenge rather than after.
+
 ## Conclusion
 Overall I found this CTF to be a very fun experience and I definitely hope to do more of them.  Some things to take away from this is definitely document as I am doing the challenge rather than trying to remember post event.  Also take screenshots.  Like I said earlier, based on the difficulty, I am very happy with answering 4 out of the 21 questions, and actually placing 270th out of over 5000 individuals who signed up.  The next time I do a CTF I hope to be able do better and complete more challenges.
